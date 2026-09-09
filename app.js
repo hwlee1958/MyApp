@@ -1,8 +1,8 @@
 // 1. 제공해주신 이름과 나이 데이터 목록
 const memberList = {
-    'Lee h': 19,
-    'Kim y': 30,
-    'Park P': 50
+    'Lee hw': 19,
+    'Kim yh': 30,
+    'Park pr': 50
 };
 
 // DOM 요소 가져오기
