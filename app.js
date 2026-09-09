@@ -49,7 +49,7 @@ nameSelect.addEventListener('change', (event) => {
         
         // 🌟 [핵심] 선택한 이름을 사용해 자동으로 './data/이름.png' 경로 생성
         // 브라우저가 공백이나 특수문자를 안전하게 인식하도록 encodeURIComponent를 사용해 묶어줍니다.
-        resPhoto.src = `./data/${encodeURIComponent(selectedName)}.png`;
+        resPhoto.src = `./data/${encodeURIComponent(selectedName)}.PNG`;
         
         resultCard.classList.remove('hidden');
     } else {
