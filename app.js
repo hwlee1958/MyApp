@@ -37,19 +37,20 @@ function updateSelectBox() {
 }
 
 // 3. 콤보 박스 선택 이벤트
+// app.js의 콤보 박스 선택 이벤트 (3번 항목)만 이 코드로 교체해 보세요.
 nameSelect.addEventListener('change', (event) => {
     const selectedName = event.target.value;
 
     if (selectedName) {
         const age = memberList[selectedName];
         
-        // 4. 화면에 이름과 나이 표시
         resName.textContent = selectedName;
         resAge.textContent = `${age} 세`;
         
-        // 🌟 [핵심] 선택한 이름을 사용해 자동으로 './data/이름.png' 경로 생성
-        // 브라우저가 공백이나 특수문자를 안전하게 인식하도록 encodeURIComponent를 사용해 묶어줍니다.
-        resPhoto.src = `./data/${encodeURIComponent(selectedName)}.PNG`;
+        // 🌟 공백을 모두 제거하고, 대문자를 전부 소문자로 바꾸어 파일명을 완성합니다.
+        // 예: "Lee h" -> "leeh", 이미지 경로는 "./data/leeh.png"가 됩니다.
+        const fixedFileName = selectedName.replace(/\s+/g, '').toLowerCase();
+        resPhoto.src = `./data/${fixedFileName}.png`;
         
         resultCard.classList.remove('hidden');
     } else {
